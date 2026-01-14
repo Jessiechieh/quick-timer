@@ -41,6 +41,9 @@ body {
 body.explode #explosion {
   animation: bigbang 1.8s ease-out forwards;
 }
+body.explode #timer {
+  opacity: 0;
+}
 @keyframes bigbang {
   0% {
     opacity: 0.2;
