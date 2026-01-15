@@ -34,7 +34,8 @@ soundToggle = function(des, state){
 };
 show = function(){
   isShow = !isShow;
-  return $('.fbtn').css('opacity', isShow ? '1.0' : '0.1');
+  $('.fbtn').css('opacity', isShow ? '1.0' : '0.1');
+  return $('#hide').text(isShow ? '隱藏按鈕' : '顯示按鈕');
 };
 adjust = function(it, v){
   if (isBlink) {
@@ -52,7 +53,7 @@ adjust = function(it, v){
 };
 toggle = function(){
   isRun = !isRun;
-  $('#toggle').text(isRun ? "STOP" : "RUN");
+  $('#toggle').text(isRun ? "停止" : "開始");
   if (!isRun && handler) {
     stopBy = new Date();
     clearInterval(handler);
@@ -142,7 +143,7 @@ resize = function(){
   var tm, w, h, len;
   tm = $('#timer');
   w = tm.width();
-  h = $(window).height();
+  h = tm.height();
   len = tm.text().length;
   len >= 3 || (len = 3);
   tm.css('font-size', 1.5 * w / len + "px");

@@ -1,79 +1,166 @@
-html, body
+:root
+  color-scheme: light
+
+*
+  box-sizing: border-box
+
+body
   margin: 0
   padding: 0
-  width: 100%
-  height: 100%
-  -webkit-touch-callout: none
-  -webkit-user-select: none
-  -khtml-user-select: none
-  -moz-user-select: moz-none
-  -ms-user-select: none
-  user-select: none
+  font-family: "Helvetica Neue", "PingFang TC", "Noto Sans TC", Arial, sans-serif
+  background: #f6f4f2
+  color: #2d2d2d
+
+a
+  text-decoration: none
+
+.site-header
+  background: linear-gradient(120deg, #2f3a52, #6c7aa8)
+  color: #fff
+  padding: 48px 24px
+
+.site-header__content
+  max-width: 1080px
+  margin: 0 auto
+  display: flex
+  flex-wrap: wrap
+  gap: 24px
+  align-items: center
+  justify-content: space-between
+
+.profile-summary__handle
+  font-size: 14px
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  margin: 0 0 8px
+  opacity: 0.8
+
+.profile-summary__name
+  font-size: 36px
+  margin: 0 0 12px
+  font-weight: 700
+
+.profile-summary__bio
+  margin: 0 0 20px
+  max-width: 480px
+  line-height: 1.6
+
+.profile-summary__stats
+  list-style: none
+  padding: 0
+  margin: 0
+  display: flex
+  gap: 24px
+
+.profile-summary__stats li
+  display: flex
+  flex-direction: column
+
+.stat-number
+  font-size: 20px
+  font-weight: 700
+
+.stat-label
+  font-size: 12px
+  opacity: 0.7
+
+.profile-summary__cta
+  align-self: flex-start
+  padding: 12px 28px
+  font-weight: 600
+  border-radius: 999px
+  border: none
+
+main
+  max-width: 1080px
+  margin: 0 auto
+  padding: 40px 24px 80px
+
+section
+  margin-bottom: 48px
+
+.site-info h2,
+.timer-section h2,
+.posts h2
+  font-size: 24px
+  margin-bottom: 12px
+  font-weight: 700
+
+.site-info__list
+  list-style: none
+  padding: 0
+  margin: 16px 0 0
+  display: grid
+  gap: 8px
+
+.timer-section__note,
+.posts__note
+  color: #5f5f5f
+  margin-bottom: 20px
+
+.timer-panel
+  background: #fff
+  padding: 24px
+  border-radius: 16px
+  box-shadow: 0 12px 30px rgba(37, 40, 51, 0.08)
 
 #timer
   width: 100%
-  height: 100%
-  line-height: 100%
-  background: #000
+  height: 220px
+  background: #111827
   color: #fff
   text-align: center
   font-weight: 700
-  font-family: century gothic
+  font-family: "Century Gothic", "Helvetica Neue", Arial, sans-serif
+  border-radius: 16px
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-bottom: 20px
 
-#hide, #toggle, #reset, #min10, #min60, #add10, #add60, #def10, #def30, #def60, #def180, #def300, #def600, #def900, #def1800
-  position: absolute
-  top: 5px
-  left: 50%
-  margin-left: -210px
-  width: 170px
-  height: 44px
-  line-height: 30px
-#reset
-  margin-left: 50px
-#hide
-  margin-left: -30px
-  width: 70px
+.timer-controls
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr))
+  gap: 12px
 
-#min10, #min60, #add10, #add60
-  width: 50px
+.timer-controls .btn
+  border-radius: 12px
+  font-weight: 600
 
-#def10, #def30, #def60, #def180, #def300, #def600, #def900, #def1800
-  bottom: 5px
-  top: auto
-  width: 70px
-#min10
-  margin-left: -270px
-#min60
-  margin-left: -330px
-#add10
-  margin-left: 230px
-#add60
-  margin-left: 290px
+.posts .post-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+  gap: 20px
 
-#def10
-  margin-left: -285px
-#def30
-  margin-left: -205px
-#def60
-  margin-left: -125px
-#def180
-  margin-left: -45px
-#def300
-  margin-left: 35px
-#def600
-  margin-left: 115px
-#def900
-  margin-left: 195px
-#def1800
-  margin-left: 275px
+.post-card
+  background: #fff
+  border-radius: 16px
+  padding: 20px
+  box-shadow: 0 8px 24px rgba(37, 40, 51, 0.06)
+  display: flex
+  flex-direction: column
+  gap: 10px
 
-#audio
-  position: absolute
-  bottom: 30px
-  right: 10px
-  z-index: 10
+.post-card__date
+  font-size: 12px
+  color: #7c7c7c
 
-#xxx
-  position: absolute
-  top: 10px
-  left: 10px
+.post-card__tag
+  font-size: 12px
+  font-weight: 600
+  color: #5b6c96
+  background: rgba(91, 108, 150, 0.12)
+  padding: 4px 8px
+  border-radius: 999px
+  align-self: flex-start
+
+@media (max-width: 720px)
+  .site-header__content
+    flex-direction: column
+    align-items: flex-start
+
+  .profile-summary__stats
+    gap: 16px
+
+  #timer
+    height: 180px

@@ -28,6 +28,7 @@ sound-toggle = (des, state) ->
 show = ->
   is-show := !is-show
   $ \.fbtn .css \opacity, if is-show => \1.0 else \0.1
+  $ \#hide .text if is-show => "隱藏按鈕" else "顯示按鈕"
 
 adjust = (it,v) ->
   if is-blink => return
@@ -39,7 +40,7 @@ adjust = (it,v) ->
 
 toggle = ->
   is-run := !is-run
-  $ \#toggle .text if is-run => "STOP" else "RUN"
+  $ \#toggle .text if is-run => "停止" else "開始"
   if !is-run and handler => 
     stop-by := new Date!
     clearInterval handler
@@ -102,7 +103,7 @@ run =  ->
 resize = ->
   tm = $ \#timer
   w = tm.width!
-  h = $ window .height!
+  h = tm.height!
   len = tm.text!length
   len>?=3
   tm.css \font-size, "#{1.5 * w/len}px"

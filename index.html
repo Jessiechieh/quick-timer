@@ -1,1 +1,149 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="bootstrap3.min.css"><link rel="stylesheet" type="text/css" href="index.css"><script type="text/javascript" src="jquery-1.10.2.min.js"></script><script type="text/javascript" src="bootstrap3.min.js"></script><script type="text/javascript" src="index.js"></script></head><body><div id="timer">????</div><a class="btn btn-info fbtn" id="min60" onclick="adjust(-60)">-60</a><a class="btn btn-info fbtn" id="min10" onclick="adjust(-10)">-10</a><a class="btn btn-primary" id="toggle" onclick="toggle()">RUN</a><a class="btn btn-warning" id="reset" onclick="reset()">RESET</a><a class="btn btn-default" id="hide" onclick="show()">&#xd60;</a><a class="btn btn-info fbtn" id="add10" onclick="adjust(10)">+10</a><a class="btn btn-info fbtn" id="add60" onclick="adjust(60)">+60</a><a class="btn btn-success fbtn" id="def10" onclick="adjust(0,10)">10 sec</a><a class="btn btn-success fbtn" id="def30" onclick="adjust(0,30)">30 sec</a><a class="btn btn-success fbtn" id="def60" onclick="adjust(0,60)">1 min</a><a class="btn btn-success fbtn" id="def180" onclick="adjust(0,180)">3 min</a><a class="btn btn-success fbtn" id="def300" onclick="adjust(0,300)">5 min</a><a class="btn btn-success fbtn" id="def600" onclick="adjust(0,600)">10 min</a><a class="btn btn-success fbtn" id="def900" onclick="adjust(0,900)">15 min</a><a class="btn btn-success fbtn" id="def1800" onclick="adjust(0,1800)">30 min</a></body></html>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jessica Li ・生活紀錄與靈感集</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap3.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap3.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__content">
+        <div class="profile-summary">
+          <p class="profile-summary__handle">@jessieli319</p>
+          <h1 class="profile-summary__name">Jessica Li</h1>
+          <p class="profile-summary__bio">分享日常、旅行與生活靈感。喜歡用照片記錄每一段小故事，歡迎一起交流。</p>
+          <ul class="profile-summary__stats">
+            <li>
+              <span class="stat-number">128</span>
+              <span class="stat-label">篇貼文</span>
+            </li>
+            <li>
+              <span class="stat-number">3.2K</span>
+              <span class="stat-label">粉絲</span>
+            </li>
+            <li>
+              <span class="stat-number">412</span>
+              <span class="stat-label">追蹤中</span>
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-primary profile-summary__cta" href="https://www.instagram.com/jessieli319/" target="_blank" rel="noreferrer">前往 Instagram</a>
+      </div>
+    </header>
+    <main>
+      <section class="site-info">
+        <h2>網站資訊</h2>
+        <p>本站提供 Jessica Li 的生活紀錄重點摘要、拍攝靈感以及品牌合作聯絡方式，並附上常用的倒數計時工具，方便規劃拍攝與日常節奏。</p>
+        <ul class="site-info__list">
+          <li>
+            <strong>合作類型：</strong>
+            生活風格、旅行分享、簡約穿搭、城市探索
+          </li>
+          <li>
+            <strong>聯絡信箱：</strong>
+            hello@jessieli319.com
+          </li>
+          <li>
+            <strong>更新頻率：</strong>
+            每週 3 次
+          </li>
+        </ul>
+      </section>
+      <section class="timer-section">
+        <h2>倒數計時器</h2>
+        <p class="timer-section__note">用於拍攝與生活節奏管理，支援快速調整時間與預設選項。</p>
+        <div class="timer-panel">
+          <div id="timer">0000</div>
+          <div class="timer-controls">
+            <a class="btn btn-info fbtn" id="min60" onclick="adjust(-60)">-60 秒</a>
+            <a class="btn btn-info fbtn" id="min10" onclick="adjust(-10)">-10 秒</a>
+            <a class="btn btn-primary" id="toggle" onclick="toggle()">開始</a>
+            <a class="btn btn-warning" id="reset" onclick="reset()">重設</a>
+            <a class="btn btn-default" id="hide" onclick="show()">隱藏按鈕</a>
+            <a class="btn btn-info fbtn" id="add10" onclick="adjust(10)">+10 秒</a>
+            <a class="btn btn-info fbtn" id="add60" onclick="adjust(60)">+60 秒</a>
+            <a class="btn btn-success fbtn" id="def10" onclick="adjust(0,10)">10 秒</a>
+            <a class="btn btn-success fbtn" id="def30" onclick="adjust(0,30)">30 秒</a>
+            <a class="btn btn-success fbtn" id="def60" onclick="adjust(0,60)">1 分鐘</a>
+            <a class="btn btn-success fbtn" id="def180" onclick="adjust(0,180)">3 分鐘</a>
+            <a class="btn btn-success fbtn" id="def300" onclick="adjust(0,300)">5 分鐘</a>
+            <a class="btn btn-success fbtn" id="def600" onclick="adjust(0,600)">10 分鐘</a>
+            <a class="btn btn-success fbtn" id="def900" onclick="adjust(0,900)">15 分鐘</a>
+            <a class="btn btn-success fbtn" id="def1800" onclick="adjust(0,1800)">30 分鐘</a>
+          </div>
+        </div>
+      </section>
+      <section class="posts">
+        <h2>樣板貼文</h2>
+        <p class="posts__note">以下為 10 篇樣板內容，可作為未來發布的參考格式。</p>
+        <div class="post-grid">
+          <article class="post-card">
+            <span class="post-card__date">2024/09/01</span>
+            <h3>週末城市漫步</h3>
+            <p>以暖色調捕捉午後陽光，分享城市角落的咖啡香與街景。</p>
+            <span class="post-card__tag">#城市探索</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/04</span>
+            <h3>旅行行李清單分享</h3>
+            <p>精簡旅行必備品，讓每次出發都更從容。</p>
+            <span class="post-card__tag">#旅行準備</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/08</span>
+            <h3>一日穿搭靈感</h3>
+            <p>以簡約單品搭配亮色配件，打造舒適又有重點的造型。</p>
+            <span class="post-card__tag">#穿搭靈感</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/12</span>
+            <h3>早晨儀式感</h3>
+            <p>分享晨間習慣與簡易早餐，讓一天從容展開。</p>
+            <span class="post-card__tag">#生活日常</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/15</span>
+            <h3>本週攝影主題</h3>
+            <p>以光影與反射為主題，探索不一樣的視覺節奏。</p>
+            <span class="post-card__tag">#攝影練習</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/18</span>
+            <h3>風格角落佈置</h3>
+            <p>分享居家角落的小改造，提升空間氛圍感。</p>
+            <span class="post-card__tag">#居家佈置</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/21</span>
+            <h3>輕旅行路線推薦</h3>
+            <p>收錄假日輕旅行的散步路線與必拍景點。</p>
+            <span class="post-card__tag">#旅行地圖</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/24</span>
+            <h3>靜心咖啡時光</h3>
+            <p>記錄午後咖啡香與閱讀時光，放慢步調的片刻。</p>
+            <span class="post-card__tag">#慢生活</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/27</span>
+            <h3>本月最愛清單</h3>
+            <p>精選本月最愛的書籍、音樂與小物，累積生活靈感。</p>
+            <span class="post-card__tag">#靈感收藏</span>
+          </article>
+          <article class="post-card">
+            <span class="post-card__date">2024/09/30</span>
+            <h3>週末拍攝計畫</h3>
+            <p>分享拍攝流程與準備事項，讓每次創作更順利。</p>
+            <span class="post-card__tag">#創作日記</span>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

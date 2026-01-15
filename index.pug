@@ -1,26 +1,120 @@
 doctype html
-html
+html(lang="zh-Hant")
   head
     meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Jessica Li ・生活紀錄與靈感集
     link(rel="stylesheet",type="text/css",href="bootstrap3.min.css")
     link(rel="stylesheet",type="text/css",href="index.css")
     script(type="text/javascript",src="jquery-1.10.2.min.js")
     script(type="text/javascript",src="bootstrap3.min.js")
     script(type="text/javascript",src="index.js")
   body
-    #timer ????
-    a#min60.btn.btn-info.fbtn(onclick="adjust(-60)") -60
-    a#min10.btn.btn-info.fbtn(onclick="adjust(-10)") -10
-    a#toggle.btn.btn-primary(onclick="toggle()") RUN
-    a#reset.btn.btn-warning(onclick="reset()") RESET
-    a#hide.btn.btn-default(onclick="show()") &#xd60;
-    a#add10.btn.btn-info.fbtn(onclick="adjust(10)") +10
-    a#add60.btn.btn-info.fbtn(onclick="adjust(60)") +60
-    a#def10.btn.btn-success.fbtn(onclick="adjust(0,10)") 10 sec
-    a#def30.btn.btn-success.fbtn(onclick="adjust(0,30)") 30 sec
-    a#def60.btn.btn-success.fbtn(onclick="adjust(0,60)") 1 min
-    a#def180.btn.btn-success.fbtn(onclick="adjust(0,180)") 3 min
-    a#def300.btn.btn-success.fbtn(onclick="adjust(0,300)") 5 min
-    a#def600.btn.btn-success.fbtn(onclick="adjust(0,600)") 10 min
-    a#def900.btn.btn-success.fbtn(onclick="adjust(0,900)") 15 min
-    a#def1800.btn.btn-success.fbtn(onclick="adjust(0,1800)") 30 min
+    header.site-header
+      .site-header__content
+        .profile-summary
+          p.profile-summary__handle @jessieli319
+          h1.profile-summary__name Jessica Li
+          p.profile-summary__bio
+            | 分享日常、旅行與生活靈感。喜歡用照片記錄每一段小故事，歡迎一起交流。
+          ul.profile-summary__stats
+            li
+              span.stat-number 128
+              span.stat-label 篇貼文
+            li
+              span.stat-number 3.2K
+              span.stat-label 粉絲
+            li
+              span.stat-number 412
+              span.stat-label 追蹤中
+        a.btn.btn-primary.profile-summary__cta(href="https://www.instagram.com/jessieli319/" target="_blank" rel="noreferrer") 前往 Instagram
+    main
+      section.site-info
+        h2 網站資訊
+        p
+          | 本站提供 Jessica Li 的生活紀錄重點摘要、拍攝靈感以及品牌合作聯絡方式，並附上常用的倒數計時工具，方便規劃拍攝與日常節奏。
+        ul.site-info__list
+          li
+            strong 合作類型：
+            |  生活風格、旅行分享、簡約穿搭、城市探索
+          li
+            strong 聯絡信箱：
+            |  hello@jessieli319.com
+          li
+            strong 更新頻率：
+            |  每週 3 次
+      section.timer-section
+        h2 倒數計時器
+        p.timer-section__note 用於拍攝與生活節奏管理，支援快速調整時間與預設選項。
+        .timer-panel
+          #timer 0000
+          .timer-controls
+            a#min60.btn.btn-info.fbtn(onclick="adjust(-60)") -60 秒
+            a#min10.btn.btn-info.fbtn(onclick="adjust(-10)") -10 秒
+            a#toggle.btn.btn-primary(onclick="toggle()") 開始
+            a#reset.btn.btn-warning(onclick="reset()") 重設
+            a#hide.btn.btn-default(onclick="show()") 隱藏按鈕
+            a#add10.btn.btn-info.fbtn(onclick="adjust(10)") +10 秒
+            a#add60.btn.btn-info.fbtn(onclick="adjust(60)") +60 秒
+            a#def10.btn.btn-success.fbtn(onclick="adjust(0,10)") 10 秒
+            a#def30.btn.btn-success.fbtn(onclick="adjust(0,30)") 30 秒
+            a#def60.btn.btn-success.fbtn(onclick="adjust(0,60)") 1 分鐘
+            a#def180.btn.btn-success.fbtn(onclick="adjust(0,180)") 3 分鐘
+            a#def300.btn.btn-success.fbtn(onclick="adjust(0,300)") 5 分鐘
+            a#def600.btn.btn-success.fbtn(onclick="adjust(0,600)") 10 分鐘
+            a#def900.btn.btn-success.fbtn(onclick="adjust(0,900)") 15 分鐘
+            a#def1800.btn.btn-success.fbtn(onclick="adjust(0,1800)") 30 分鐘
+      section.posts
+        h2 樣板貼文
+        p.posts__note 以下為 10 篇樣板內容，可作為未來發布的參考格式。
+        .post-grid
+          article.post-card
+            span.post-card__date 2024/09/01
+            h3 週末城市漫步
+            p 以暖色調捕捉午後陽光，分享城市角落的咖啡香與街景。
+            span.post-card__tag #城市探索
+          article.post-card
+            span.post-card__date 2024/09/04
+            h3 旅行行李清單分享
+            p 精簡旅行必備品，讓每次出發都更從容。
+            span.post-card__tag #旅行準備
+          article.post-card
+            span.post-card__date 2024/09/08
+            h3 一日穿搭靈感
+            p 以簡約單品搭配亮色配件，打造舒適又有重點的造型。
+            span.post-card__tag #穿搭靈感
+          article.post-card
+            span.post-card__date 2024/09/12
+            h3 早晨儀式感
+            p 分享晨間習慣與簡易早餐，讓一天從容展開。
+            span.post-card__tag #生活日常
+          article.post-card
+            span.post-card__date 2024/09/15
+            h3 本週攝影主題
+            p 以光影與反射為主題，探索不一樣的視覺節奏。
+            span.post-card__tag #攝影練習
+          article.post-card
+            span.post-card__date 2024/09/18
+            h3 風格角落佈置
+            p 分享居家角落的小改造，提升空間氛圍感。
+            span.post-card__tag #居家佈置
+          article.post-card
+            span.post-card__date 2024/09/21
+            h3 輕旅行路線推薦
+            p 收錄假日輕旅行的散步路線與必拍景點。
+            span.post-card__tag #旅行地圖
+          article.post-card
+            span.post-card__date 2024/09/24
+            h3 靜心咖啡時光
+            p 記錄午後咖啡香與閱讀時光，放慢步調的片刻。
+            span.post-card__tag #慢生活
+          article.post-card
+            span.post-card__date 2024/09/27
+            h3 本月最愛清單
+            p 精選本月最愛的書籍、音樂與小物，累積生活靈感。
+            span.post-card__tag #靈感收藏
+          article.post-card
+            span.post-card__date 2024/09/30
+            h3 週末拍攝計畫
+            p 分享拍攝流程與準備事項，讓每次創作更順利。
+            span.post-card__tag #創作日記
